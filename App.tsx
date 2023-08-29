@@ -1,16 +1,8 @@
 import React from 'react';
-import {Text} from 'react-native';
-import styled from 'styled-components/native';
-import {SignIn} from './src/screen/SignIn/Signin';
-
-export const Container = styled.View`
-  flex: 1;
-  align-items: center;
-  justify-content: center;
-`;
+import Welcome from './src/screen/Welcome/Welcome';
 
 const App = () => {
-  return <SignIn />;
+  return <Welcome />;
 };
 
 export default App;
