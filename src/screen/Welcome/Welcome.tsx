@@ -1,10 +1,11 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 import * as Styled from './styles';
 
 import {MyBlur} from '../../components/MyBlur';
 
 const Welcome = () => {
+  const [activeButton, setActiveButton] = useState('register');
   return (
     <>
       <MyBlur />
@@ -23,10 +24,14 @@ const Welcome = () => {
               And study major
             </Styled.Body>
             <Styled.ButtonContainer>
-              <Styled.ButtonRegister>
+              <Styled.ButtonRegister
+                isActive={activeButton === 'register'}
+                onPress={() => setActiveButton('register')}>
                 <Styled.TitleRegister>Register</Styled.TitleRegister>
               </Styled.ButtonRegister>
-              <Styled.ButtonSignIn>
+              <Styled.ButtonSignIn
+                isActive={activeButton === 'signin'}
+                onPress={() => setActiveButton('signin')}>
                 <Styled.TitleSignIn>Sign In</Styled.TitleSignIn>
               </Styled.ButtonSignIn>
             </Styled.ButtonContainer>

@@ -3,6 +3,10 @@ import styled from 'styled-components/native';
 
 const {height} = Dimensions.get('window') 
 
+interface Props {
+    isActive: boolean;
+}
+
 export const StyledSafeView = styled.SafeAreaView`
     flex: 1;
     align-items: center;
@@ -59,12 +63,13 @@ export const ButtonContainer = styled.View`
     margin-top: 40px;
 `;
 
-export const ButtonRegister = styled.TouchableOpacity`
+export const ButtonRegister = styled.TouchableOpacity<Props>`
     flex: 1;
     padding: 16px;
     border-radius: 6px;
     align-items: center;
-    background-color: #ffffff70;
+    background-color: ${({ isActive }) => isActive ? '#DFE3E430': '#ffffff70'};
+    transition: 100s;
 `;
 
 export const TitleRegister = styled.Text`
@@ -72,10 +77,12 @@ export const TitleRegister = styled.Text`
     color: #353147;
 `;
 
-export const ButtonSignIn = styled.TouchableOpacity`
+export const ButtonSignIn = styled.TouchableOpacity<Props>`
     flex: 1;
     padding: 16px;
     align-items: center;
+    background-color: ${({ isActive }) => isActive ? '#DFE3E430': '#ffffff70'};
+    transition: 100s;
 `;
 
 export const TitleSignIn = styled.Text`
