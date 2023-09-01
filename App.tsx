@@ -1,8 +1,8 @@
 import React from 'react';
-import Welcome from './src/screen/Welcome/Welcome';
+import MyNavigation from './src/navigation/MyNavigation';
 
 const App = () => {
-  return <Welcome />;
+  return <MyNavigation />;
 };
 
 export default App;

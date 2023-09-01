@@ -3,9 +3,21 @@ import React, {useState} from 'react';
 import * as Styled from './styles';
 
 import {MyBlur} from '../../components/MyBlur';
+import {NavigationProp} from '@react-navigation/native';
+import {RootStackParamList} from '../../navigation/types';
 
-const Welcome = () => {
+const Welcome = ({
+  navigation,
+}: {
+  navigation: NavigationProp<RootStackParamList>;
+}) => {
   const [activeButton, setActiveButton] = useState('register');
+
+  const handleSignInPress = () => {
+    setActiveButton('signin');
+
+    navigation.navigate('Signin');
+  };
   return (
     <>
       <MyBlur />
@@ -31,7 +43,7 @@ const Welcome = () => {
               </Styled.ButtonRegister>
               <Styled.ButtonSignIn
                 isActive={activeButton === 'signin'}
-                onPress={() => setActiveButton('signin')}>
+                onPress={handleSignInPress}>
                 <Styled.TitleSignIn>Sign In</Styled.TitleSignIn>
               </Styled.ButtonSignIn>
             </Styled.ButtonContainer>
